@@ -1,0 +1,1 @@
+Directory "Macintosh HD:Shock:Libraries:FIX:Source"PPCAsm FixAsm.s -o FixAsm.s.omakePEF FixAsm.s.o -o FixAsm.pef	Rez  AsmSample.r -append -o AsmSample

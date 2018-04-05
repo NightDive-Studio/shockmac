@@ -1,0 +1,1 @@
+Directory "Macintosh HD:Shock:Game Src:"PPCAsm BlitLargeAlign.s -o BlitLargeAlign.s.oDirectory "KenCobb:Shock:Game Src:"PPCAsm FastSlotCopy.s -o FastSlotCopy.s.omakePEF FixAsm.s.o -o FixAsm.pef	Rez  AsmSample.r -append -o AsmSample

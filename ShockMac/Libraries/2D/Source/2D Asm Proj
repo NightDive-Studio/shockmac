@@ -1,0 +1,1 @@
+Directory "KenCobb:Shock:Libraries:2D:Source:"PPCAsm WallLitLoop1D.s -o WallLitLoop1D.s.oPPCAsm FloorLoop.s -o FloorLoop.s.oPPCAsm LinearLoop.s -o LinearLoop.s.oPPCAsm PermapLoop.s -o PermapLoop.s.omakePEF FixAsm.s.o -o FixAsm.pef	Rez  AsmSample.r -append -o AsmSample

@@ -1,0 +1,1 @@
+Directory "Macintosh HD:Shock:Libraries:RND:Source"PPCAsm RndAsm.s -o RndAsm.s.omakePEF FixAsm.s.o -o FixAsm.pef	Rez  AsmSample.r -append -o AsmSample
