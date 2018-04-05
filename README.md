@@ -47,9 +47,10 @@ allows storeing both forks and metada information for every file.
 About the source code organization:
 
 The source code is split into three sections: Game code, Mac code and Libraries.
-(a) Game code is related to System Shock-specific code, like enemy AI, level rendering, etc.
-(b) Mac code is related to Macintosh-specific code, like the typical user interface and internal behavior.
-(c) Libraries are related to code shared by other Looking Glass games, like 2D and 3D rendering, sound, input, resources, palette etc.
+
+* Game code is related to System Shock-specific code, like enemy AI, level rendering, etc.
+* Mac code is related to Macintosh-specific code, like the typical user interface and internal behavior.
+* Libraries are related to code shared by other Looking Glass games, like 2D and 3D rendering, sound, input, resources, palette etc.
 
 How to unpack the project:
 
