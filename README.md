@@ -58,12 +58,12 @@ After unpacking it, a folder named ShockMac will be generated with the contents 
 
 How to compile:
 
-(1) Double-click on the CodeWarrior IDE 1.7 icon to start the IDE
-(2) Open one of the projects inside the folder ShockMac:Libraries
-(3) Click on Project -> Make to build the library.
-(4) Move the generated library file to the folder ShockMac:Lib
-(5) Close the project by clicking on File -> Close
-(6) Repeat steps (2) to (5) for the following projects:
+1. Double-click on the CodeWarrior IDE 1.7 icon to start the IDE
+2. Open one of the projects inside the folder ShockMac:Libraries
+3. Click on Project -> Make to build the library.
+4. Move the generated library file to the folder ShockMac:Lib
+5. Close the project by clicking on File -> Close
+6. Repeat steps (2) to (5) for the following projects:
     * ShockMac:Libraries:2d:2dLibPPC.µ 
     * ShockMac:Libraries:3d:3dLibPPC.µ 
     * ShockMac:Libraries:DSTRUCT:DSTRUCT.µ 
@@ -78,13 +78,13 @@ How to compile:
     * ShockMac:Libraries:SND:SND.µ 
     * ShockMac:Libraries:UI:UI.µ 
     * ShockMac:Libraries:VOX:VOX.µ 
-(7) Open the project ShockMac:LIB:LGHeadersPPC.µ 
-(8) Precompile by clicking on Project -> Precompile
-(9) Close the project
-(10) Open the project ShockMac:Shock.µ 
-(11) Click on Project -> Make to build the game.
-(12) Make sure the game resources are in the folder ShockMac:Data
-(13) Launch the game.
+7. Open the project ShockMac:LIB:LGHeadersPPC.µ 
+8. Precompile by clicking on Project -> Precompile
+9. Close the project
+10. Open the project ShockMac:Shock.µ 
+11. Click on Project -> Make to build the game.
+12. Make sure the game resources are in the folder ShockMac:Data
+13. Launch the game.
 
 LICENSE
 =======
