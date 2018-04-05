@@ -1,1 +1,7 @@
-main() {	PPC_ASM_TEST(); } 
+
+
+main()
+ {
+	PPC_ASM_TEST();
+ }
+ 
