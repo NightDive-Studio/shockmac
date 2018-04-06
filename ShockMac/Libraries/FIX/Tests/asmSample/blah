@@ -1,1 +1,103 @@
-File "asm", length 723 BytesHeader:magic1           =     0x4a6fmagic2           =     0x7921fileTypeID       = 0x70656666architectureID   = 0x70777063versionNumber    = 0x00000001dateTimeStamp    = 0xaac81ea2definVersion     = 0x00000000implVersion      = 0x00000000currentVersion   = 0x00000000numberSections   = 3loadableSections = 2memoryAddress    = 0x00000000Section header 0:sectionName      = 0xffffffff "(none)"sectionAddress   = 0x00000000execSize         = 0x000001d8 (472 Bytes)initSize         = 0x000001d8 (472 Bytes)rawSize          = 0x000001d8 (472 Bytes)containerOffset  = 0x000000e0regionKind       =       0x00 (CodeSection)shareKind        =       0x04 (GlobalShare)alignment        =       0x04reserved         =       0x00Section header 1:sectionName      = 0xffffffff "(none)"sectionAddress   = 0x00000000execSize         = 0x00000154 (340 Bytes)initSize         = 0x00000024 (36 Bytes)rawSize          = 0x00000013 (19 Bytes)containerOffset  = 0x000002c0regionKind       =       0x02 (PIDataSection)shareKind        =       0x01 (ContextShare)alignment        =       0x04reserved         =       0x00Section header 2:sectionName      = 0xffffffff "(none)"sectionAddress   = 0x00000000execSize         = 0x00000000 (0 Bytes)initSize         = 0x00000000 (0 Bytes)rawSize          = 0x00000054 (84 Bytes)containerOffset  = 0x00000080regionKind       =       0x04 (LoaderSection)shareKind        =       0x04 (GlobalShare)alignment        =       0x04reserved         =       0x00At file offset 0x0000007c: global string table of 4 BytesAt file offset 0x00000080: section contents for section 2   file alignment = 128 byte, size 0x00000054 (84 Bytes)   section is LoaderSection, non-loadable, name = "(none)"  entryPointSection = 1 entryPointOffset  = 0x0000001c initPointSection  = -1 initPointOffset   = 0x00000000 termPointSection  = -1 termPointOffset   = 0x00000000 numImportFiles    = 0 numImportSyms     = 0 numSections       = 1 relocationsOffset = 0x00000044 stringsOffset     = 0x0000004c hashSlotTable     = 0x0000004c hashSlotTabSize   = 1 (2) numExportSyms     = 0 Loader import container list: Imported symbols: Loader RelExp headers:  RelExp Header 0 for section 1    numRelocations    = 3    relocationsOffset = 0x00000000 Loader relocations:   (1) CODE    1   (1) DATA    6   (1) DSC2    1 Hash Slot Table:   HashSlot   0:  chain count  0;  chain index 0   HashSlot   1:  chain count  0;  chain index 0 Exported symbols: Loader string table:Hole of size 12 BytesAt file offset 0x000000e0: section contents for section 0   file alignment = 32 byte, size 0x000001d8 (472 Bytes)   section is CodeSection, loadable, name = "(none)" Hole of size 8 BytesAt file offset 0x000002c0: section contents for section 1   file alignment = 64 byte, size 0x00000013 (19 Bytes)   section is PIDataSection, loadable, name = "(none)" At file offset 0x000002d3: end of file   file alignment = 1 byte
+
+File "asm", length 723 Bytes
+
+Header:
+magic1           =     0x4a6f
+magic2           =     0x7921
+fileTypeID       = 0x70656666
+architectureID   = 0x70777063
+versionNumber    = 0x00000001
+dateTimeStamp    = 0xaac81ea2
+definVersion     = 0x00000000
+implVersion      = 0x00000000
+currentVersion   = 0x00000000
+numberSections   = 3
+loadableSections = 2
+memoryAddress    = 0x00000000
+
+Section header 0:
+sectionName      = 0xffffffff "(none)"
+sectionAddress   = 0x00000000
+execSize         = 0x000001d8 (472 Bytes)
+initSize         = 0x000001d8 (472 Bytes)
+rawSize          = 0x000001d8 (472 Bytes)
+containerOffset  = 0x000000e0
+regionKind       =       0x00 (CodeSection)
+shareKind        =       0x04 (GlobalShare)
+alignment        =       0x04
+reserved         =       0x00
+
+Section header 1:
+sectionName      = 0xffffffff "(none)"
+sectionAddress   = 0x00000000
+execSize         = 0x00000154 (340 Bytes)
+initSize         = 0x00000024 (36 Bytes)
+rawSize          = 0x00000013 (19 Bytes)
+containerOffset  = 0x000002c0
+regionKind       =       0x02 (PIDataSection)
+shareKind        =       0x01 (ContextShare)
+alignment        =       0x04
+reserved         =       0x00
+
+Section header 2:
+sectionName      = 0xffffffff "(none)"
+sectionAddress   = 0x00000000
+execSize         = 0x00000000 (0 Bytes)
+initSize         = 0x00000000 (0 Bytes)
+rawSize          = 0x00000054 (84 Bytes)
+containerOffset  = 0x00000080
+regionKind       =       0x04 (LoaderSection)
+shareKind        =       0x04 (GlobalShare)
+alignment        =       0x04
+reserved         =       0x00
+
+At file offset 0x0000007c: global string table of 4 Bytes
+
+At file offset 0x00000080: section contents for section 2
+   file alignment = 128 byte, size 0x00000054 (84 Bytes)
+   section is LoaderSection, non-loadable, name = "(none)" 
+ entryPointSection = 1
+ entryPointOffset  = 0x0000001c
+ initPointSection  = -1
+ initPointOffset   = 0x00000000
+ termPointSection  = -1
+ termPointOffset   = 0x00000000
+ numImportFiles    = 0
+ numImportSyms     = 0
+ numSections       = 1
+ relocationsOffset = 0x00000044
+ stringsOffset     = 0x0000004c
+ hashSlotTable     = 0x0000004c
+ hashSlotTabSize   = 1 (2)
+ numExportSyms     = 0
+ Loader import container list:
+ Imported symbols:
+ Loader RelExp headers:
+  RelExp Header 0 for section 1
+    numRelocations    = 3
+    relocationsOffset = 0x00000000
+ Loader relocations:
+   (1) CODE    1
+   (1) DATA    6
+   (1) DSC2    1
+ Hash Slot Table:
+   HashSlot   0:  chain count  0;  chain index 0
+   HashSlot   1:  chain count  0;  chain index 0
+ Exported symbols:
+ Loader string table:
+
+Hole of size 12 Bytes
+
+At file offset 0x000000e0: section contents for section 0
+   file alignment = 32 byte, size 0x000001d8 (472 Bytes)
+   section is CodeSection, loadable, name = "(none)" 
+
+Hole of size 8 Bytes
+
+At file offset 0x000002c0: section contents for section 1
+   file alignment = 64 byte, size 0x00000013 (19 Bytes)
+   section is PIDataSection, loadable, name = "(none)" 
+
+At file offset 0x000002d3: end of file
+   file alignment = 1 byte
+

@@ -1,1 +1,65 @@
-;; Copyright (C) 2015-2018 Night Dive Studios, LLC.;; This program is free software: you can redistribute it and/or modify; it under the terms of the GNU General Public License as published by; the Free Software Foundation, either version 3 of the License, or; (at your option) any later version.;; This program is distributed in the hope that it will be useful,; but WITHOUT ANY WARRANTY; without even the implied warranty of; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the; GNU General Public License for more details.;; You should have received a copy of the GNU General Public License; along with this program.  If not, see <http://www.gnu.org/licenses/>.;option expr32option casemap:noneIFNDEF	types_inctypes_inc	EQU		1; Begin of file types.h; ;  * $Source: n:/project/lib/src/h/RCS/types.h $;  * $Revision: 1.2 $;  * $Author: kaboom $;  * $Date: 1993/09/28 01:12:47 $;  *;  * extra typedefs and macros for use by all code.;  *;  * $Log: types.h $;  * Revision 1.2  1993/09/28  01:12:47  kaboom;  * Converted #include "xxx" to #include <xxx> for watcom.;  * ;  * Revision 1.1  1993/03/19  18:19:27  matt;  * Initial revision;  ; don't redefine byte in assembly header;  these are convenience typedefs so we don't always have to keep typing;    `unsigned.' uchar		TYPEDEF		BYTEushort		TYPEDEF		WORDuint		TYPEDEF		WORDulong		TYPEDEF		DWORDbool		TYPEDEF		BYTEubyte		TYPEDEF		BYTENULL		EQU		0t;  !NULL TRUE		EQU		1t;  !TRUE FALSE		EQU		0t;  !FALSE ;  !__TYPES_H ; End of file types.hENDIF
+;
+; Copyright (C) 2015-2018 Night Dive Studios, LLC.
+;
+; This program is free software: you can redistribute it and/or modify
+; it under the terms of the GNU General Public License as published by
+; the Free Software Foundation, either version 3 of the License, or
+; (at your option) any later version.
+;
+; This program is distributed in the hope that it will be useful,
+; but WITHOUT ANY WARRANTY; without even the implied warranty of
+; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+; GNU General Public License for more details.
+;
+; You should have received a copy of the GNU General Public License
+; along with this program.  If not, see <http://www.gnu.org/licenses/>.
+;
+
+option expr32
+option casemap:none
+
+IFNDEF	types_inc
+types_inc	EQU		1
+
+; Begin of file types.h
+; 
+;  * $Source: n:/project/lib/src/h/RCS/types.h $
+;  * $Revision: 1.2 $
+;  * $Author: kaboom $
+;  * $Date: 1993/09/28 01:12:47 $
+;  *
+;  * extra typedefs and macros for use by all code.
+;  *
+;  * $Log: types.h $
+;  * Revision 1.2  1993/09/28  01:12:47  kaboom
+;  * Converted #include "xxx" to #include <xxx> for watcom.
+;  * 
+;  * Revision 1.1  1993/03/19  18:19:27  matt
+;  * Initial revision
+;  
+; don't redefine byte in assembly header
+;  these are convenience typedefs so we don't always have to keep typing
+;    `unsigned.' 
+uchar		TYPEDEF		BYTE
+
+ushort		TYPEDEF		WORD
+
+uint		TYPEDEF		WORD
+
+ulong		TYPEDEF		DWORD
+
+bool		TYPEDEF		BYTE
+
+ubyte		TYPEDEF		BYTE
+
+NULL		EQU		0t
+;  !NULL 
+TRUE		EQU		1t
+;  !TRUE 
+FALSE		EQU		0t
+;  !FALSE 
+;  !__TYPES_H 
+; End of file types.h
+
+ENDIF
+

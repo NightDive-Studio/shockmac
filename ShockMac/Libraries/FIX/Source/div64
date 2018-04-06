@@ -1,1 +1,72 @@
-Subj:  64 bit unsigned divide                95-01-21 19:18:18 PSTFrom:  Martin.MinowHere's a cut-paste of some code I did to divide 64 bit / 64 bit. It's had minimal testing.It's based on the hardware algorithm used on the original Illiac, designed in the late 1940's./* * This is a bit-by-bit (i.e., inefficient) division routine that will handle * a 64-bit unsigned divide. The computation results in: *   quotient = dividend / divisor, dividend := remainder. * Adapted from the Illiac hardware manual. */static voidDivide64(  UnsignedWide   *dividendPtr, /* Dividend, becomes remainder  */  const UnsignedWide  *divisorPtr, /* Divisor, unchanged    */  UnsignedWide   *quotientPtr /* Quotient, result     */ ){  register int   i;  UnsignedWide   accumulator[2];  static const UInt32  kHighBit = 0x80000000L;  /*   * Store the dividend in the low-word of a 128 bit accumulator   */  accumulator[0].hi = accumulator[0].lo = 0;  accumulator[1] = *dividendPtr;  quotientPtr->hi = quotientPtr->lo = 0;  for (i = 0; i < 64; i++) {   /*    * Left-shift the 64-bit quotient to make room for a new bit.    */   quotientPtr->hi <<= 1;   if ((quotientPtr->lo & kHighBit) != 0)    quotientPtr->hi |= 1;   quotientPtr->lo <<= 1;   /*    * Left-shift the 128-bit accumulator    */   accumulator[0].hi <<= 1;   if ((accumulator[0].lo & kHighBit) != 0)    accumulator[0].hi |= 1;   accumulator[0].lo <<= 1;   if ((accumulator[1].hi & kHighBit) != 0)    accumulator[0].lo |= 1;   accumulator[1].hi <<= 1;   if ((accumulator[1].lo & kHighBit) != 0)    accumulator[1].hi |= 1;   accumulator[1].lo <<= 1;   /*    * Compare the high-word of the accumulator to the divisor.    */   if (accumulator[0].hi > divisorPtr->hi    || (accumulator[0].hi == divisorPtr->hi     && accumulator[0].lo >= divisorPtr->lo)) {    /*     * Accumulator is >= divisor, put a bit into the quotient     * (remember, we left-shifted it first) and subtract the     * divisor from the accumulator high word     */    quotientPtr->lo |= 1;    if (accumulator[0].lo >= divisorPtr->lo)     accumulator[0].hi -= divisorPtr->hi;    else {     accumulator[0].hi -= (divisorPtr->hi + 1);    }    accumulator[0].lo -= divisorPtr->lo;   }  }  *dividendPtr = accumulator[0];}
+Subj:  64 bit unsigned divide                95-01-21 19:18:18 PST
+From:  Martin.Minow
+
+Here's a cut-paste of some code I did to divide 64 bit / 64 bit. It's had minimal testing.
+It's based on the hardware algorithm used on the original Illiac, designed in the late 1940's.
+
+/*
+ * This is a bit-by-bit (i.e., inefficient) division routine that will handle
+ * a 64-bit unsigned divide. The computation results in:
+ *   quotient = dividend / divisor, dividend := remainder.
+ * Adapted from the Illiac hardware manual.
+ */
+static void
+Divide64(
+  UnsignedWide   *dividendPtr, /* Dividend, becomes remainder  */
+  const UnsignedWide  *divisorPtr, /* Divisor, unchanged    */
+  UnsignedWide   *quotientPtr /* Quotient, result     */
+ )
+{
+  register int   i;
+  UnsignedWide   accumulator[2];
+  static const UInt32  kHighBit = 0x80000000L;
+
+  /*
+   * Store the dividend in the low-word of a 128 bit accumulator
+   */
+  accumulator[0].hi = accumulator[0].lo = 0;
+  accumulator[1] = *dividendPtr;
+  quotientPtr->hi = quotientPtr->lo = 0;
+  for (i = 0; i < 64; i++) {
+   /*
+    * Left-shift the 64-bit quotient to make room for a new bit.
+    */
+   quotientPtr->hi <<= 1;
+   if ((quotientPtr->lo & kHighBit) != 0)
+    quotientPtr->hi |= 1;
+   quotientPtr->lo <<= 1;
+   /*
+    * Left-shift the 128-bit accumulator
+    */
+   accumulator[0].hi <<= 1;
+   if ((accumulator[0].lo & kHighBit) != 0)
+    accumulator[0].hi |= 1;
+   accumulator[0].lo <<= 1;
+   if ((accumulator[1].hi & kHighBit) != 0)
+    accumulator[0].lo |= 1;
+   accumulator[1].hi <<= 1;
+   if ((accumulator[1].lo & kHighBit) != 0)
+    accumulator[1].hi |= 1;
+   accumulator[1].lo <<= 1;
+   /*
+    * Compare the high-word of the accumulator to the divisor.
+    */
+   if (accumulator[0].hi > divisorPtr->hi
+    || (accumulator[0].hi == divisorPtr->hi
+     && accumulator[0].lo >= divisorPtr->lo)) {
+    /*
+     * Accumulator is >= divisor, put a bit into the quotient
+     * (remember, we left-shifted it first) and subtract the
+     * divisor from the accumulator high word
+     */
+    quotientPtr->lo |= 1;
+    if (accumulator[0].lo >= divisorPtr->lo)
+     accumulator[0].hi -= divisorPtr->hi;
+    else {
+     accumulator[0].hi -= (divisorPtr->hi + 1);
+    }
+    accumulator[0].lo -= divisorPtr->lo;
+   }
+  }
+  *dividendPtr = accumulator[0];
+}
