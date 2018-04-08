@@ -90,7 +90,7 @@ How to compile:
 LICENSE
 =======
 
-The System Shock source code is available under the terms of the GNU
-General Public License v3.0
+The System Shock source code is available under the terms of the [GNU
+General Public License v3.0](LICENSE)
 
-See COPYING.txt for the GNU GENERAL PUBLIC LICENSE
+See [COPYING.txt](COPYING.txt) for the GNU GENERAL PUBLIC LICENSE
