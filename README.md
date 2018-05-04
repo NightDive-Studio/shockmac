@@ -93,4 +93,4 @@ LICENSE
 The System Shock source code is available under the terms of the GNU
 General Public License v3.0
 
-See COPYING.txt for the GNU GENERAL PUBLIC LICENSE
+See [LICENSE](LICENSE) for the GNU GENERAL PUBLIC LICENSE
